@@ -31,6 +31,10 @@ function handleSubmit() {
     formData.append('name', post.value.name);
     formData.append('is_inactive', is_inactive.toString());     // formData only accepts string values
 
+    formData.forEach((value, key) => {
+        console.log(key + ': ' + value);
+    });
+
     axios.post('http://127.0.0.1:8000/api/categories', formData)
         .then(response => {
             console.log("Created", response.data);

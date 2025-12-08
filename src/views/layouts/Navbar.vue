@@ -11,6 +11,7 @@
           <span class="fs-4">Vue App</span>
         </a>
         <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto">
+          <span class="badge bg-info pt-3 px-3">{{ counter.count }}</span>
           <router-link class="me-3 py-2 link-body-emphasis text-decoration-none" to="/">Home</router-link>
           <router-link class="me-3 py-2 link-body-emphasis text-decoration-none" to="/pricing">Pricing</router-link>
           <router-link class="me-3 py-2 link-body-emphasis text-decoration-none" to="/compare-plans">Plans</router-link>
@@ -21,3 +22,9 @@
       </div>
     </header>
 </template>
+
+<script setup>
+import { useCounterStore } from '@/store/counter';
+
+const counter = useCounterStore();
+</script>
