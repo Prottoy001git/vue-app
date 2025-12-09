@@ -2,7 +2,7 @@ import { defineStore } from 'pinia';
 
 export const useCounterStore = defineStore('counter', {    // <-- can take 2 parameters
     state: () => ({
-        count: 0
+        count: Number(localStorage.getItem('counter')) || 0
     }),
     actions: {
         increment() {
@@ -10,6 +10,9 @@ export const useCounterStore = defineStore('counter', {    // <-- can take 2 par
         },
         decrement() {
             this.count--;
+        },
+        setLocal() {
+            localStorage.setItem('counter', this.count.toString());
         }
     },
     getters: {

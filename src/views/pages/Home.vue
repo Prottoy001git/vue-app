@@ -1,16 +1,22 @@
 <script setup lang="ts">
 import { useCounterStore } from '@/store/counter';
+import { useUserStore } from '@/store/user';
 import { ref } from 'vue';
 const counter = useCounterStore();
 
 // interface Counter {
 //     count: number;
 // }
-const inputcount = ref(0);
+const inputcount = ref(counter.count);
 
 function formSubmit() {
     counter.count= inputcount.value;
+    counter.setLocal();
 }
+
+const userData = useUserStore();
+const user = ref(userData.user);
+console.log(user.value);
 </script>
 
 <template>

@@ -16,6 +16,7 @@
           <router-link class="me-3 py-2 link-body-emphasis text-decoration-none" to="/pricing">Pricing</router-link>
           <router-link class="me-3 py-2 link-body-emphasis text-decoration-none" to="/compare-plans">Plans</router-link>
           <router-link class="me-3 py-2 link-body-emphasis text-decoration-none" to="/form">Form</router-link>
+          <router-link class="me-3 py-2 link-body-emphasis text-decoration-none" to="/form2">Form2</router-link>
           <router-link class="me-3 py-2 link-body-emphasis text-decoration-none" to="/posts">Posts</router-link>
           <router-link class="me-3 py-2 link-body-emphasis text-decoration-none" to="/categories">Categories</router-link>
         </nav>
