@@ -19,6 +19,8 @@
           <router-link class="me-3 py-2 link-body-emphasis text-decoration-none" to="/form2">Form2</router-link>
           <router-link class="me-3 py-2 link-body-emphasis text-decoration-none" to="/posts">Posts</router-link>
           <router-link class="me-3 py-2 link-body-emphasis text-decoration-none" to="/categories">Categories</router-link>
+          <router-link class="me-3 py-2 link-body-emphasis text-decoration-none" to="/products">Products</router-link>
+          <router-link class="me-3 py-2 link-body-emphasis text-decoration-none" to="/ai/chat">AI</router-link>
         </nav>
       </div>
     </header>
