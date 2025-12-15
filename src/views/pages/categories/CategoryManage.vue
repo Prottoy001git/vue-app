@@ -35,6 +35,7 @@
 </template>
 
 <script setup lang="ts">
+import { api } from '@/config/api';
 import type { Category } from '@/interfaces/Category';
 import axios from 'axios';
 import { ref } from 'vue';
@@ -45,7 +46,7 @@ const router = useRouter();
 let categories = ref<Category[]>([]);
 
 function fetchCategories() {
-    axios.get('http://127.0.0.1:8000/api/categories')
+    api.get('http://127.0.0.1:8000/api/categories')
         .then(response => {
             categories.value = response.data.data;
             // console.log(response.data);
@@ -61,7 +62,7 @@ function fetchCategories() {
 fetchCategories();      // Initial fetch of data
 
 function deleteCategory(id: number) {
-    axios.delete(`http://127.0.0.1:8000/api/categories/${id}`)
+    api.delete(`http://127.0.0.1:8000/api/categories/${id}`)
     .then(() => {
         console.log("Deleted: ", id);
         fetchCategories();   // Refresh the list after deletion

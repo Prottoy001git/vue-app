@@ -14,6 +14,7 @@
 </template>
 
 <script setup lang="ts">
+import { api } from '@/config/api';
 import { defaultCategory, type Category } from '@/interfaces/Category';
 import type { PostCreate } from '@/interfaces/PostCreate';
 import axios from 'axios';
@@ -35,7 +36,7 @@ function handleSubmit() {
         console.log(key + ': ' + value);
     });
 
-    axios.post('http://127.0.0.1:8000/api/categories', formData)
+    api.post('http://127.0.0.1:8000/api/categories', formData)
         .then(response => {
             console.log("Created", response.data);
             console.log("Status Code", response.status);

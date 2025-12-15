@@ -16,6 +16,7 @@
 </template>
 
 <script setup lang="ts">
+import { api } from '@/config/api';
 import { defaultCategory, type Category } from '@/interfaces/Category';
 import axios from 'axios';
 import { ref } from 'vue';
@@ -42,7 +43,7 @@ function handleSubmit() {
     formData.append('is_inactive', item.value.is_inactive.toString());     // formData only accepts string values
     formData.append('_method', 'PUT');                                     // For Laravel to recognize as PUT request
 
-    axios.post(`http://127.0.0.1:8000/api/categories/${id}`, formData)     //for form data use post with _method as PUT
+    api.post(`http://127.0.0.1:8000/api/categories/${id}`, formData)     //for form data use post with _method as PUT
     .then(response => {
         console.log("Updated", response.data);
     })
@@ -55,7 +56,7 @@ function handleSubmit() {
     });
 }
 
-axios.get(`http://127.0.0.1:8000/api/categories/${id}`)
+api.get(`http://127.0.0.1:8000/api/categories/${id}`)
     .then(response => {
         // console.log(response.data);
         item.value = response.data.data;
